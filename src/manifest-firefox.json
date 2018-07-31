@@ -1,0 +1,11 @@
+{
+  "options_ui": {
+    "page": "options.html",
+    "browser_style": true
+  },
+  "applications": {
+    "gecko": {
+      "id": "benwinding@gmail.com"
+    }
+  }
+}

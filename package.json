@@ -1,0 +1,27 @@
+{
+  "name": "chromefox-template",
+  "scripts": {
+    "build": "yarn build-firefox && yarn build-chrome && yarn zip-src",
+    "zip-src": "git archive -o build-src.zip HEAD",
+    "clean": "rm -rf ./build-*",
+    "build-chrome": "IS_PRODUCTION=true TARGET=chrome gulp build",
+    "build-firefox": "IS_PRODUCTION=true TARGET=firefox gulp build",
+    "watch-chrome": "TARGET=chrome gulp watch",
+    "watch-firefox": "TARGET=firefox gulp watch"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "file-loader": "^0.11.2",
+    "fs-extra": "^0.30.0",
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-inject-string": "^1.1.1",
+    "gulp-json-transform": "^0.4.5",
+    "gulp-rename": "^1.4.0",
+    "gulp-sequence": "^1.0.0",
+    "gulp-zip": "^4.1.0"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}

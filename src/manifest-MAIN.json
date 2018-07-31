@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+  "author": "Homer Simpson",
+  "name": "Template Extension",
+  "short_name": "TE",
+  "version": "0.0.1",
+  "homepage_url": "https://example.com",
+    "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "css": [
+      "css/content.css"
+    ],
+    "js": [
+      "vendor/jquery.min.js",
+      "js/shared/core.js",
+      "js/content.js"
+    ]
+  }],
+  "background": {
+    "scripts": [
+      "js/shared/core.js",
+      "js/background.js"
+    ]
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "img/favicon-32x32.png"
+  },
+  "icons": {
+    "128": "img/favicon-128x128.png",
+    "32": "img/favicon-32x32.png"
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "<all_urls>"
+  ]
+}
