@@ -7,8 +7,9 @@ const rename = require('gulp-rename');
 const zip = require('gulp-zip');
 const inject = require('gulp-inject-string');
 
+const mainManifest = require(`./src/manifest-MAIN.json`);
+const version = mainManifest.version;
 const target = process.env.TARGET || 'chrome';
-const version = process.env.npm_package_version;
 const isProduction = process.env.IS_PRODUCTION;
 
 console.log('       VERSION=' + version);
@@ -68,7 +69,6 @@ gulp.task('css', function() {
 });
 
 gulp.task('manifest', function() {
-  let mainManifest = require(`./src/manifest-MAIN.json`);
   return gulp.src(conf.src.manifest)
     .pipe(rename("manifest.json"))
     .pipe(jsonTransform(function(data, file) {
